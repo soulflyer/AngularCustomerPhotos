@@ -1,0 +1,33 @@
+<html ng-app>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" media="(min-width: 1024px)" type="text/css" href="css/laptop.css">
+    <link rel="stylesheet" media="(min-width: 601px) and (max-width: 1024px) type="text/css" href="css/tablet.css">
+    <link rel="stylesheet" media="(max-width: 600px)" type="text/css" href="css/phone.css">
+    <link rel="stylesheet" type="text/css" href="css/fbbutton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-controller="PhotosController">
+    <div class="container">
+      <header class="main">
+        <div id="logo">Soulflyer Photos</div>
+        <div id="menu"></div>
+      </header><!-- end header.main -->
+      <nav>
+        <ul>
+          <li><a href=http://soulflyer.com/>home</a></li>
+          <li><a href=photos.zip>download</a></li>
+        </ul>
+      </nav>
+      <div ng-view>
+      </div>
+      <section class="content">
+        <span ng-repeat="photo in album.photos">
+            <a class="medium" href={{rootURL}}/medium/{{photo.url}}><img src={{rootURL}}/thumbs/{{photo.url}}></a>
+            <a class="large" href={{rootURL}}/large/{{photo.url}}><img src={{rootURL}}/thumbs/{{photo.url}}></a>
+            <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}{{photo.url}}','358956457475087') />
+        </span>
+      </section>
+  </body>
+</html>
