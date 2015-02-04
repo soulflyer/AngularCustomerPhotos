@@ -1,0 +1,26 @@
+{
+    "divecentre-facebook-id":358956457475087,
+    "title": "hello",
+    "photos": [
+        {
+            "url": "2015/01/01-New-Year-Dive/DIW_9895.jpg",
+            "title": "pic 1 caption",
+            "description": "this is a picture"
+        },
+        {
+            "url": "2015/01/01-New-Year-Dive/DIW_9945.jpg",
+            "title": "pic 2 caption",
+            "description": "this is a picture"
+        },
+        {
+            "url": "2015/02/02-Cam-BBQ/DIW_0666.jpg",
+            "title": "pic 1 caption",
+            "description": "this is a picture"
+        },
+        {
+            "url": "2015/01/01-New-Year-Dive/DIW_9945.jpg",
+            "title": "pic 2 caption",
+            "description": "this is a picture"
+        }
+    ]
+}

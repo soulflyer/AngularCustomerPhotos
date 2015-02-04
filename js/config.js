@@ -4,6 +4,10 @@ customerphotos.config(function ($routeProvider) {
             templateUrl: "partials/album.html",
             controller: "PhotosController"
         }).
+        when("/:albumid/:pictureid",{
+            templateUrl: "partials/picture.html",
+            controller: "PictureController"
+        }).
         otherwise({
             redirectTo: '/parking'
         });
