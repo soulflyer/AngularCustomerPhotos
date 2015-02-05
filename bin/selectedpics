@@ -1,0 +1,16 @@
+#!/usr/bin/osascript
+set pics to ""
+tell application "Aperture"
+  set cursel to the selection
+  repeat with pic in cursel
+    set picurl to value of other tag "MasterLocation" of pic
+    set thescript to "echo " & quoted form of picurl & "| sed " & quoted form of "s[ > [/[g"
+    set picurl to do shell script thescript
+    set picurl to picurl & "/" & name of pic & ".jpg"
+    if pics is not "" then
+      set picurl to tab & picurl
+    end if
+    set pics to pics & picurl
+  end repeat
+  end tell
+return pics
