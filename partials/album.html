@@ -1,7 +1,6 @@
 <section class="content">
   <span ng-repeat="photo in album.photos">
-    <a class="medium" href={{rootURL}}/medium/{{photo.url}}><img src={{rootURL}}/thumbs/{{photo.url}}></a>
-    <a class="large" href={{rootURL}}/large/{{photo.url}}><img src={{rootURL}}/thumbs/{{photo.url}}></a>
-    <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}{{photo.url}}','358956457475087') />
+    <a class="medium" href="#/{{albumid}}/{{$index}}"><img src={{rootURL}}/thumbs/{{photo.url}}></a>
+    <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}{{photo.url}}','{{album.divecentreFacebookID}}') />
   </span>
 </section>

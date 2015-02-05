@@ -1,1 +1,75 @@
-/Users/iain/Pictures/divephotos/css/phone.css
+header, nav {
+  width: 100%; }
+
+ul {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  width: 100%;
+  height: 0px; }
+
+li {
+  margin: 0px;
+  float: left;
+  height: 0px;
+  padding-bottom: 11%;
+  padding-top: 2%;
+  border-bottom: 1px solid #2e3034;
+  width: 100%;
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic; }
+
+#logo {
+  float: left;
+  background: url(../images/logo.png) no-repeat top left;
+  background-size: cover;
+  width: 83%;
+  padding-bottom: 17%;
+  color: transparent;
+  height: 0px; }
+
+#menu {
+  float: right;
+  background: url(../images/menu-button-2.png) no-repeat top left;
+  background-size: cover;
+  height: 0px;
+  color: transparent;
+  width: 17%;
+  padding-bottom: 17%; }
+
+.container {
+  min-width: 340px; }
+
+header {
+  height: 0px;
+  padding-bottom: 17%; }
+
+nav {
+  height: 0.5px;
+  overflow: hidden;
+  width: 100%;
+  background: #2e3034;
+  outline: 1px solid #2e3034;
+  padding-bottom: 0px;
+  -webkit-transition: padding-bottom 1s; }
+
+nav.is-expanded {
+  background: #EBDA8C;
+  margin: 0px;
+  height: 0px;
+  padding-bottom: 39%; }
+
+aside .photo-image {
+  width: 25%; }
+
+aside .photo-image img {
+  width: 100%; }
+
+aside .photo-description {
+  width: 70%;
+  margin-bottom: 6%; }
+
+/*# sourceMappingURL=phone.css.map */

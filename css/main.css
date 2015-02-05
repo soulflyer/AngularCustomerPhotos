@@ -1,1 +1,123 @@
-/Users/iain/Pictures/divephotos/css/main.css
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background: #EBDA8C; }
+
+header {
+  background: #E3C13C; }
+  header #logo {
+    font-family: Papyrus, fantasy; }
+
+h1, h2 {
+  font-family: Papyrus, fantasy; }
+
+nav li {
+  font-family: Papyrus, fantasy;
+  /* background: $pale-yellow; */ }
+
+nav {
+  background: #EBDA8C; }
+
+nav a {
+  text-decoration: none; }
+
+nav li a:visited, nav a:link, nav a:active {
+  color: #000000;
+  text-decoration: none; }
+
+#infobutton {
+  cursor: pointer; }
+
+a img {
+  outline: 4px solid black;
+  margin: 1%; }
+
+.content {
+  position: relative;
+  text-align: center;
+  margin: 2%;
+  clear: both; }
+
+.pic-content {
+  position: relative;
+  margin: 2%;
+  outline: 4px solid black; }
+
+.previous {
+  position: absolute;
+  left: 0px;
+  right: 75%;
+  top: 0%;
+  height: 100%;
+  background: none; }
+
+.previous:hover {
+  background: url(../images/leftarrow.png) no-repeat 0% 50%; }
+
+.next {
+  position: absolute;
+  right: 0px;
+  left: 75%;
+  top: 0%;
+  height: 100%;
+  background: none; }
+
+.next:hover {
+  background: url(../images/rightarrow.png) no-repeat 100% 50%; }
+
+.up {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 0%;
+  height: 25%;
+  background: none; }
+
+.up:hover {
+  background: url(../images/uparrow.png) no-repeat 50% 0%; }
+
+.large-pic {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  height: 75%; }
+
+.next a, .previous a {
+  display: block;
+  height: 100%; }
+
+.pic-content img {
+  width: 100%; }
+
+aside {
+  display: none; }
+
+aside.is-expanded {
+  display: block;
+  margin: 2%; }
+
+aside .photo-block {
+  clear: both; }
+
+aside .photo-image {
+  float: left;
+  margin-bottom: 1%; }
+
+aside .photo-description {
+  float: left;
+  width: 68%;
+  margin-left: 2%; }
+
+aside .photo-description h2 {
+  margin-top: 0%;
+  margin-bottom: 0%; }
+
+aside .photo-description p {
+  margin-top: 0%;
+  margin-bottom: 0%; }
+
+/*# sourceMappingURL=main.css.map */
