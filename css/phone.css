@@ -72,4 +72,8 @@ aside .photo-description {
   width: 70%;
   margin-bottom: 6%; }
 
+.fbinput {
+    visibility: hidden;
+}
+
 /*# sourceMappingURL=phone.css.map */

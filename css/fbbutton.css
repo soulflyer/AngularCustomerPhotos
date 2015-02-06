@@ -1,1 +1,11 @@
-/Users/iain/Pictures/divephotos/css/fbbutton.css
+input.fbinput {
+    position: absolute;
+    background-image: url(/divephotos/images/fbshare.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    width: 35px;
+    margin-left: -35px;
+    bottom: 0px;
+}

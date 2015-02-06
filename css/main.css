@@ -46,6 +46,9 @@ a img {
   margin: 2%;
   outline: 4px solid black; }
 
+.picture-span {
+  position: relative; }
+
 .previous {
   position: absolute;
   left: 0px;
