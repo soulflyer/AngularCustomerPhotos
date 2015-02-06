@@ -1,16 +1,13 @@
 {
     "divecentreFacebookID":358956457475087,
     "title": "hello",
+    "divecentrePromoPic": "images/Divecentre.png",
     "photos": [
         {
-            "url": "2015/01/01-New-Year-Dive/DIW_9895.jpg",
-            "title": "pic 1 caption",
-            "description": "this is a picture"
+            "url": "2015/01/01-New-Year-Dive/DIW_9895.jpg"
         },
         {
-            "url": "2015/01/01-New-Year-Dive/DIW_9945.jpg",
-            "title": "pic 2 caption",
-            "description": "this is a picture"
+            "url": "2015/01/01-New-Year-Dive/DIW_9945.jpg"
         }
     ]
 }

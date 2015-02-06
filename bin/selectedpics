@@ -4,13 +4,53 @@ tell application "Aperture"
   set cursel to the selection
   repeat with pic in cursel
     set picurl to value of other tag "MasterLocation" of pic
-    set thescript to "echo " & quoted form of picurl & "| sed " & quoted form of "s[ > [/[g"
-    set picurl to do shell script thescript
+    set components to my split(picurl, " > ")
+    set picurl to ""
+    repeat with component in components
+      set picurl to picurl & my monthToIntegerString(component as string) & "/"
+    end repeat
     set picurl to picurl & "/" & name of pic & ".jpg"
     if pics is not "" then
       set picurl to tab & picurl
     end if
     set pics to pics & picurl
   end repeat
-  end tell
+end tell
 return pics
+
+on split(sometext, delimiter)
+  set AppleScript's text item delimiters to delimiter
+  set sometext to sometext's text items
+  set AppleScript's text item delimiters to {""} --> restore delimiters to default value
+  return sometext
+end split
+
+on monthToIntegerString(mN)
+  if (mN is "Jan") or (mN is "jan") or (mN is "January") or (mN is "january") then
+    return "01"
+  else if (mN is "Feb") or (mN is "feb") or (mN is "February") or (mN is "february") then
+    return "02"
+  else if (mN is "Mar") or (mN is "mar") or (mN is "March") or (mN is "march") then
+    return "03"
+  else if (mN is "Apr") or (mN is "apr") or (mN is "April") or (mN is "april") then
+    return "04"
+  else if (mN is "May") or (mN is "may") then
+    return "05"
+  else if (mN is "Jun") or (mN is "jun") or (mN is "June") or (mN is "june") then
+    return "06"
+  else if (mN is "Jul") or (mN is "jul") or (mN is "July") or (mN is "july") then
+    return "07"
+  else if (mN is "Aug") or (mN is "aug") or (mN is "August") or (mN is "august") then
+    return "08"
+  else if (mN is "Sep") or (mN is "sep") or (mN is "September") or (mN is "september") then
+    return "09"
+  else if (mN is "Oct") or (mN is "oct") or (mN is "October") or (mN is "october") then
+    return "10"
+  else if (mN is "Nov") or (mN is "nov") or (mN is "November") or (mN is "november") then
+    return "11"
+  else if (mN is "Dec") or (mN is "dec") or (mN is "December") or (mN is "december") then
+    return "12"
+  else
+    return mN
+  end if
+end monthToIntegerString

@@ -1,5 +1,9 @@
 customerphotos.config(function ($routeProvider) {
     $routeProvider.
+        when("/", {
+            templateUrl: "partials/find.html",
+            controller: "FindController"
+        }).
         when("/:albumid", {
             templateUrl: "partials/album.html",
             controller: "PhotosController"
@@ -9,6 +13,6 @@ customerphotos.config(function ($routeProvider) {
             controller: "PictureController"
         }).
         otherwise({
-            redirectTo: '/parking'
+            redirectTo: '/'
         });
 });

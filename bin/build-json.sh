@@ -39,15 +39,22 @@ shift $((OPTIND-1))
 
 echo "{" > $outp
 echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," > $outp
-echo "  \"divecentre\": ${DIVECENTRE}," > $outp
-echo "  \"divecentrePromoPic\": ${DIVECENTREPROMOPIC}," > $outp
+echo "  \"divecentre\": \"${DIVECENTRE}\"," > $outp
+echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," > $outp
 echo "  \"photos\": [" > $outp
 
+FIRST=1
 for picture in $PHOTOLIST
 do
+    if [ $FIRST -eq 1 ]
+    then
+        FIRST=0
+    else
+        echo "      ," > $outp
+    fi
     echo "    {" > $outp
-    echo "      $picture" > $outp
-    echo "    }," > $outp
+    echo "      \"url\": \"$picture\"" > $outp
+    echo "    }" > $outp
 done
 echo "  ]" > $outp
 echo "}" > $outp

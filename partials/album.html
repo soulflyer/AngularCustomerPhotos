@@ -1,9 +1,9 @@
 <section class="content">
   <span>
-    <a class="medium" href="http://divevietnam.com"><img src={{album.divecentrePromoPic}}></a>
+    <a class="medium" href="http://divevietnam.com"><img ng-src={{album.divecentrePromoPic}}></a>
   </span>
   <span class="picture-span" ng-repeat="photo in album.photos">
-    <a class="medium" href="#/{{albumid}}/{{$index}}"><img src={{rootURL}}/thumbs/{{photo.url}}></a>
+    <a class="medium" href="#/{{albumid}}/{{$index}}"><img ng-src={{rootURL}}/thumbs/{{photo.url}}></a>
     <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}{{photo.url}}','{{album.divecentreFacebookID}}') />
   </span>
 </section>
