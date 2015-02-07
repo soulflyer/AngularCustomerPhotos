@@ -1,5 +1,12 @@
 <section class="find-content">
   <h1>Photo Collection</h1>
-  <p>Please enter the code you got from the Dive Centre or the photographer in the box to get access to your photos. If you got the code by email or mesage, then you can also just click on it to get to your photos.</p>
-<a ng-href={{enteredText}}>Click Here</a>
+  <p>Please enter the code you got from the Dive Centre or the photographer
+    in the box to get access to your photos. If you got the code by email
+    or mesage, then you can also just click on the link to get to your photos.
+  </p>
+  <form method="link" action="#/{{enteredText}}">
+    <input type="textfield" ng-model="enteredText">
+    <input type="submit" value="Get Photos">
+  </form>
+  <a class="get-photos-button" ng-href=#/{{enteredText}}>Get Photos</a>
 </section>

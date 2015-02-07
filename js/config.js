@@ -1,15 +1,16 @@
-customerphotos.config(function ($routeProvider) {
+customerphotos.config(function ($routeProvider,$locationProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider.
         when("/", {
-            templateUrl: "partials/find.html",
+            templateUrl: "/customerphotos/partials/find.html",
             controller: "FindController"
         }).
         when("/:albumid", {
-            templateUrl: "partials/album.html",
+            templateUrl: "/customerphotos/partials/album.html",
             controller: "PhotosController"
         }).
         when("/:albumid/:pictureid",{
-            templateUrl: "partials/picture.html",
+            templateUrl: "/customerphotos/partials/picture.html",
             controller: "PictureController"
         }).
         otherwise({
