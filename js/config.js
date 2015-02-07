@@ -5,6 +5,10 @@ customerphotos.config(function ($routeProvider,$locationProvider) {
             templateUrl: "/customerphotos/partials/find.html",
             controller: "FindController"
         }).
+        when("/info",{
+            templateUrl: "/customerphotos/partials/info.html",
+            controller: "InfoController"
+        }).
         when("/:albumid", {
             templateUrl: "/customerphotos/partials/album.html",
             controller: "PhotosController"
