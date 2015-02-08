@@ -1,2 +1,4 @@
-function InfoController($scope){
-}
+customerphotos.controller(
+    "InfoController",
+    function ($scope, $routeParams) {
+    });

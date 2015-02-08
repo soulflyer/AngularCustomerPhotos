@@ -52,24 +52,16 @@ a img {
 
 .content {
     position: relative;
-    text-align: center;
     margin: 2%;
     clear: both;
 }
 
+.album-content {
+    text-align: center;
+}
+
 .pic-content {
-    position: relative;
-    margin: 2%;
     outline: 4px solid black;
-}
-
-.find-content {
-    margin:2%;
-}
-
-.info-content {
-    margin: 2%;
-    text-decoration: none;
 }
 
 .picture-span {

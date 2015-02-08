@@ -2,7 +2,7 @@
 DIVECENTRE="Rainbow"
 DIVECENTREFBID="358956457475087"
 DIVECENTREPROMOPIC="images/Divecentre.png"
-PHOTOLIST=`/Users/iain/bin/selectedpics`
+PHOTOLIST=$(/Users/iain/bin/selectedpics)
 outp=/dev/stdout
 
 OPTIND=1
@@ -37,11 +37,11 @@ shift $((OPTIND-1))
 # echo "      FB ID: $DIVECENTREFBID"
 # echo "     extras: $@"
 
-echo "{" > $outp
-echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," > $outp
-echo "  \"divecentre\": \"${DIVECENTRE}\"," > $outp
-echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," > $outp
-echo "  \"photos\": [" > $outp
+echo "{" > "$outp"
+echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," > "$outp"
+echo "  \"divecentre\": \"${DIVECENTRE}\"," > "$outp"
+echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," > "$outp"
+echo "  \"photos\": [" > "$outp"
 
 FIRST=1
 for picture in $PHOTOLIST
@@ -50,11 +50,11 @@ do
     then
         FIRST=0
     else
-        echo "      ," > $outp
+        echo "      ," > "$outp"
     fi
-    echo "    {" > $outp
-    echo "      \"url\": \"$picture\"" > $outp
-    echo "    }" > $outp
+    echo "    {" > "$outp"
+    echo "      \"url\": \"$picture\"" > "$outp"
+    echo "    }" > "$outp"
 done
-echo "  ]" > $outp
-echo "}" > $outp
+echo "  ]" >" $outp"
+echo "}" > "$outp"
