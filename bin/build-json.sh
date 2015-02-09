@@ -56,5 +56,5 @@ do
     echo "      \"url\": \"$picture\"" > "$outp"
     echo "    }" > "$outp"
 done
-echo "  ]" >" $outp"
+echo "  ]" > "$outp"
 echo "}" > "$outp"
