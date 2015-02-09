@@ -13,7 +13,7 @@ customerphotos.config(function ($routeProvider,$locationProvider) {
             templateUrl: "/customerphotos/partials/divecentre.html",
             controller:  "DivecentreController"
         }).
-        when("/staff",{
+        when("/:divecentreid/staff",{
             templateUrl: "/customerphotos/partials/staff.html",
             controller:  "StaffController"
         }).

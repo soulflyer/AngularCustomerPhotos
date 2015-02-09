@@ -2,6 +2,8 @@ $pale-yellow: #EBDA8C;
 $mid-yellow:  #E3C13C;
 $dark-yellow: #D2A613;
 $dark-orange: #CA6D15;
+$dark-brown:  #7E3A00;
+$pic-outline: 4px solid black;
 
 $logo-font:   Papyrus, fantasy ;
 $header-font: "American Typewriter" Times serif;
@@ -56,12 +58,55 @@ a img {
     clear: both;
 }
 
+.content img {
+    outline: $pic-outline;
+}
+
+.content .block-text-left img, .content .block-text-right img {
+    margin: 2%;
+    width: 35%;
+}
+
+a:visited,  a:link, a:active {
+    color: $dark-brown;
+    text-decoration: none;
+}
+
+.content li {
+    margin-bottom: 4px;
+}
+
+.content h1 {
+    font-size: xx-large;
+    margin-bottom: -2%
+}
+
 .album-content {
     text-align: center;
 }
 
 .pic-content {
     outline: 4px solid black;
+}
+
+.block-text-left, .block-text-right {
+    clear: both;
+}
+
+.block-text-left img {
+    float: right;
+}
+
+.block-text-right img {
+    float: left;
+}
+
+.right-col, .left-col {
+        width: 61%;
+}
+
+.right-col {
+    float: right;
 }
 
 .picture-span {

@@ -23,4 +23,12 @@ nav ul li {
   display: inline;
   margin-left: 1em; }
 
+.right-col, .left-col {
+  width: 100%; }
+
+.block-text-right img {
+  height: 0px;
+  visibility: hidden;
+  margin: 0px; }
+
 /*# sourceMappingURL=tablet.css.map */

@@ -40,11 +40,44 @@ a img {
   margin: 2%;
   clear: both; }
 
+.content img {
+  outline: 4px solid black; }
+
+.content .block-text-left img, .content .block-text-right img {
+  margin: 2%;
+  width: 35%; }
+
+a:visited, a:link, a:active {
+  color: #7E3A00;
+  text-decoration: none; }
+
+.content li {
+  margin-bottom: 4px; }
+
+.content h1 {
+  font-size: xx-large;
+  margin-bottom: -2%; }
+
 .album-content {
   text-align: center; }
 
 .pic-content {
   outline: 4px solid black; }
+
+.block-text-left, .block-text-right {
+  clear: both; }
+
+.block-text-left img {
+  float: right; }
+
+.block-text-right img {
+  float: left; }
+
+.right-col, .left-col {
+  width: 61%; }
+
+.right-col {
+  float: right; }
 
 .picture-span {
   position: relative; }

@@ -1,4 +1,5 @@
 customerphotos.controller(
     "StaffController",
-    function ($scope) {
+    function ($scope,$routeParams) {
+        $scope.divecentre=$routeParams.divecentreid;
     });

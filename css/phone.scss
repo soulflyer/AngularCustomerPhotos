@@ -12,7 +12,7 @@ $menu-height: $menu-item-height * 3;
 
 header, nav { width:100%; }
 
-ul {
+nav ul {
     float:left;
     margin: 0px;
     padding: 0px;
@@ -21,7 +21,7 @@ ul {
     height:0px;
 }
 
-li {
+nav li {
     margin: 0px;
     float: left;
     height:0px;
@@ -91,4 +91,14 @@ aside .photo-image img {
 aside .photo-description {
     width: 70%;
     margin-bottom: 6%;
-    }
+}
+
+.right-col, .left-col {
+    width: 100%;
+}
+
+.block-text-right img {
+    height: 0px;
+    visibility: hidden;
+    margin: 0px;
+}
