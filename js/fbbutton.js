@@ -1,9 +1,9 @@
 window.fbAsyncInit = function() {
     FB.init({
         // appId for localhost
-        // appId      : '659375807506663',
+        appId      : '659375807506663',
         // appId for soulflyer.co.uk
-        appId      : '897493126927870',
+        //appId      : '897493126927870',
         xfbml      : true,
         version    : 'v2.2'
     });
@@ -47,7 +47,7 @@ var postImage = function(imageURL,divecentre){
                        },
                        function(response2){
                            if (!response2 || response2.error){
-                               alert('error posting to facebook');
+                               alert('error posting to facebook ' + response2.error);
                            }else{
                                alert('Posted pic to Facebook');
                            }
