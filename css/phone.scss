@@ -80,17 +80,20 @@ nav.is-expanded {
     padding-bottom:$menu-height;
 }
 
-aside .photo-image {
-    width:25%;
-}
+/* aside .photo-image { */
+/*     width:25%; */
+/* } */
 
-aside .photo-image img {
-    width: 100%;
-}
+/* aside .photo-image img { */
+/*     width: 100%; */
+/* } */
 
-aside .photo-description {
-    width: 70%;
-    margin-bottom: 6%;
+/* aside .photo-description { */
+/*     width: 70%; */
+/*     margin-bottom: 6%; */
+/* } */
+.album-content img {
+    width: 46%;
 }
 
 .right-col, .left-col {
@@ -100,5 +103,9 @@ aside .photo-description {
 .block-text-right img {
     height: 0px;
     visibility: hidden;
+    margin: 0px;
+}
+
+body.ng-scope {
     margin: 0px;
 }
