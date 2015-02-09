@@ -1,7 +1,7 @@
 #!/bin/bash
 DIVECENTRE="Rainbow"
 DIVECENTREFBID="358956457475087"
-DIVECENTREPROMOPIC="images/Divecentre.png"
+DIVECENTREPROMOPIC="images/RainbowPromo.png"
 PHOTOLIST=$(/Users/iain/bin/selectedpics)
 outp=/dev/stdout
 

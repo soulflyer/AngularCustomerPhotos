@@ -1,5 +1,5 @@
 customerphotos.controller(
     "FindController",
     function($scope){
-    $scope.enteredText="samples";
+    $scope.enteredText="rainbowsample";
     });
