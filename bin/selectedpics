@@ -9,7 +9,7 @@ tell application "Aperture"
     repeat with component in components
       set picurl to picurl & my monthToIntegerString(component as string) & "/"
     end repeat
-    set picurl to picurl & "/" & name of pic & ".jpg"
+    set picurl to picurl & name of pic & ".jpg"
     if pics is not "" then
       set picurl to tab & picurl
     end if

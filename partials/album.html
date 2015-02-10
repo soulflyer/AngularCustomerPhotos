@@ -4,6 +4,6 @@
   </span>
   <span class="picture-span" ng-repeat="photo in album.photos">
     <a class="medium" href="/customerphotos/{{albumid}}/{{$index}}"><img ng-src={{rootURL}}/thumbs/{{photo.url}}></a>
-    <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}{{photo.url}}','{{album.divecentreFacebookID}}') />
+    <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}/medium/{{photo.url}}','{{album.divecentreFacebookID}}') />
   </span>
 </section>

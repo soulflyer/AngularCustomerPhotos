@@ -1,9 +1,9 @@
 window.fbAsyncInit = function() {
     FB.init({
         // appId for localhost
-        appId      : '659375807506663',
+        // appId      : '659375807506663',
         // appId for soulflyer.co.uk
-        //appId      : '897493126927870',
+        appId      : '897493126927870',
         xfbml      : true,
         version    : 'v2.2'
     });
@@ -40,6 +40,8 @@ var postImage = function(imageURL,divecentre){
             if (response.authResponse){
                 var access_token = FB.getAuthResponse()['accessToken'];
                 console.log('Acess Token = ' + access_token);
+                console.log('Image URL = ' + imageURL);
+                console.log('Message = ' + message);
                 FB.api('me/photos', 'post',
                        { message: message,
                          url: imageURL,
