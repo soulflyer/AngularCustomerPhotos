@@ -86,4 +86,8 @@ nav.is-expanded {
 body.ng-scope {
   margin: 0px; }
 
+.pic-content .fbinput {
+  margin-left: 88%;
+  width: 14%; }
+
 /*# sourceMappingURL=phone.css.map */

@@ -1,7 +1,8 @@
 <section class="content pic-content">
   <img src={{rootURL}}/medium/{{currentpic.url}}>
-  <a class="previous" href=/customerphotos/{{albumid}}/{{prevpicnumber}}></a>
+  <a class="previous" href={{albumid}}/{{prevpicnumber}}></a>
   <a class="large-pic" href={{rootURL}}/large/{{currentpic.url}}></a>
-  <a class="next" href=/customerphotos/{{albumid}}/{{nextpicnumber}}></a>
-  <a class="up" href=/customerphotos/{{albumid}}></a>
+  <a class="next" href={{albumid}}/{{nextpicnumber}}></a>
+  <a class="up" href={{albumid}}></a>
+  <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}/medium/{{photo.url}}','{{album.divecentreFacebookID}}') />
 </section>
