@@ -4,6 +4,7 @@ DIVECENTREFBID="358956457475087"
 DIVECENTREPROMOPIC="images/RainbowPromo.png"
 DIVECENTREURL="divevietnam.com"
 PHOTOLIST=$(/Users/iain/bin/selectedpics)
+JSONDIR="/Users/iain/Pictures/Published/json"
 outp=/dev/stdout
 
 OPTIND=1
@@ -35,6 +36,14 @@ done
 shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
+echo $1
+
+if [ $1 ]
+then
+    outp="$JSONDIR"/"$1"
+fi
+
+
 # echo "  Photolist: $PHOTOLIST"
 # echo "Dive centre: $DIVECENTRE"
 # echo "  Promo pic: $DIVECENTREPROMOPIC"
@@ -42,11 +51,11 @@ shift $((OPTIND-1))
 # echo "     extras: $@"
 
 echo "{" > "$outp"
-echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," > "$outp"
-echo "  \"divecentre\": \"${DIVECENTRE}\"," > "$outp"
-echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," > "$outp"
-echo "  \"divecentreURL\": \"${DIVECENTREURL}\"," > "$outp"
-echo "  \"photos\": [" > "$outp"
+echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," >> "$outp"
+echo "  \"divecentre\": \"${DIVECENTRE}\"," >> "$outp"
+echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," >> "$outp"
+echo "  \"divecentreURL\": \"${DIVECENTREURL}\"," >> "$outp"
+echo "  \"photos\": [" >> "$outp"
 
 FIRST=1
 for picture in $PHOTOLIST
@@ -55,11 +64,11 @@ do
     then
         FIRST=0
     else
-        echo "      ," > "$outp"
+        echo "      ," >> "$outp"
     fi
-    echo "    {" > "$outp"
-    echo "      \"url\": \"$picture\"" > "$outp"
-    echo "    }" > "$outp"
+    echo "    {" >> "$outp"
+    echo "      \"url\": \"$picture\"" >> "$outp"
+    echo "    }" >> "$outp"
 done
-echo "  ]" > "$outp"
-echo "}" > "$outp"
+echo "  ]" >> "$outp"
+echo "}" >> "$outp"
