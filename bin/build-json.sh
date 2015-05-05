@@ -2,7 +2,7 @@
 DIVECENTRE="Rainbow"
 DIVECENTREFBID="358956457475087"
 DIVECENTREPROMOPIC="images/RainbowPromo.png"
-DIVECENTREURL="divevietnam.com"
+DIVECENTREURL="http://divevietnam.com"
 PHOTOLIST=$(/Users/iain/bin/selectedpics)
 JSONDIR="/Users/iain/Pictures/Published/json"
 outp=/dev/stdout

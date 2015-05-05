@@ -1,9 +1,8 @@
 <section class="content album-content">
-  <span>
+  <span ng-hide=album.nodivecentre>
     <a class="medium" href={{album.divecentreURL}}><img ng-src={{album.divecentrePromoPic}}></a>
   </span>
   <span class="picture-span" ng-repeat="photo in album.photos">
     <a class="medium" href="{{albumid}}/{{$index}}"><img ng-src={{rootURL}}/thumbs/{{photo.url}}></a>
-    <input type=button value='' class='fbinput' onclick=Javascript:postImage('{{rootURL}}/medium/{{photo.url}}','{{album.divecentreFacebookID}}') />
   </span>
 </section>
