@@ -1,4 +1,5 @@
 #!/bin/bash
+NODIVECENTRE=false
 DIVECENTRE="Rainbow"
 DIVECENTREFBID="358956457475087"
 DIVECENTREPROMOPIC="images/RainbowPromo.png"
@@ -9,8 +10,11 @@ outp=/dev/stdout
 
 OPTIND=1
 
-while getopts "u:f:i:p:d:l:?" opt; do
+while getopts "nu:f:i:p:d:l:?" opt; do
     case $opt in
+        n)
+            NODIVECENTRE=true
+            ;;
         u)
             DIVECENTREURL=$OPTARG
             ;;
@@ -34,6 +38,7 @@ while getopts "u:f:i:p:d:l:?" opt; do
 done
 
 shift $((OPTIND-1))
+#Fuck knows why I'm checking for -- at this point...
 [ "$1" = "--" ] && shift
 
 echo $1
@@ -51,6 +56,7 @@ fi
 # echo "     extras: $@"
 
 echo "{" > "$outp"
+echo "  \"nodivecentre\": ${NODIVECENTRE}," >> "$outp"
 echo "  \"divecentreFacebookID\": ${DIVECENTREFBID}," >> "$outp"
 echo "  \"divecentre\": \"${DIVECENTRE}\"," >> "$outp"
 echo "  \"divecentrePromoPic\": \"${DIVECENTREPROMOPIC}\"," >> "$outp"
