@@ -4,14 +4,21 @@ DIVECENTRE="none"
 DIVECENTREFBID="320658371441269"
 DIVECENTREPROMOPIC="images/Divecentre.png"
 DIVECENTREURL="http://soulflyer.co.uk"
+BUILDZIP=false
 PHOTOLIST=$(/Users/iain/bin/selectedpics)
 JSONDIR="/Users/iain/Pictures/Published/json"
+ZIPDIR="/users/iain/Pictures/Published/zip"
+PICDIR="/Users/iain/Pictures/Published/large"
+
 outp=/dev/stdout
 
 OPTIND=1
 
-while getopts "nu:f:i:p:d:l:?" opt; do
+while getopts "znu:f:i:p:d:l:?" opt; do
     case $opt in
+        z)
+            BUILDZIP=true
+            ;;
         n)
             NODIVECENTRE=true
             ;;
@@ -36,6 +43,15 @@ while getopts "nu:f:i:p:d:l:?" opt; do
             ;;
     esac
 done
+
+echo "BUILDZIP is $BUILDZIP"
+if [ $"DIVECENTRE"="Sailing Club" ]
+then
+    echo "sailing club divers"
+    DIVECENTREPROMOPIC="images/sailingpromo.jpg"
+    DIVECENTREURL="http://www.sailingclubdivers.com"
+    DIVECENTREFBID="123788904350090"
+fi
 
 shift $((OPTIND-1))
 #Fuck knows why I'm checking for -- at this point...
@@ -78,3 +94,12 @@ do
 done
 echo "  ]" >> "$outp"
 echo "}" >> "$outp"
+
+if [ $BUILDZIP = true ]
+then
+    for picture in $PHOTOLIST
+    do
+        #add to zip file
+        zip -jqdc "$ZIPDIR"/"$1".zip "$PICDIR"/"$picture"
+    done
+fi
