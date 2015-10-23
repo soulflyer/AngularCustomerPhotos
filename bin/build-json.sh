@@ -44,14 +44,6 @@ while getopts "znu:f:i:p:d:l:?" opt; do
     esac
 done
 
-echo "BUILDZIP is $BUILDZIP"
-if [ $"DIVECENTRE"="Sailing Club" ]
-then
-    echo "sailing club divers"
-    DIVECENTREPROMOPIC="images/sailingpromo.jpg"
-    DIVECENTREURL="http://www.sailingclubdivers.com"
-    DIVECENTREFBID="123788904350090"
-fi
 
 shift $((OPTIND-1))
 #Fuck knows why I'm checking for -- at this point...
@@ -64,11 +56,28 @@ then
     outp="$JSONDIR"/"$1"
 fi
 
+if [ "$DIVECENTRE" = "Sailing Club" ]
+then
+    echo "sailing club divers"
+    DIVECENTREPROMOPIC="images/sailingpromo.jpg"
+    DIVECENTREURL="http://www.sailingclubdivers.com"
+    DIVECENTREFBID="123788904350090"
+fi
+
+if [ "$DIVECENTRE" == "Rainbow" ]
+then
+    echo "Rainbow divers"
+    DIVECENTREPROMOPIC="images/RainbowPromo.png"
+    DIVECENTREURL="http://divevietnam.com"
+    DIVECENTREFBID="358956457475087"
+fi
+
 
 # echo "  Photolist: $PHOTOLIST"
-# echo "Dive centre: $DIVECENTRE"
-# echo "  Promo pic: $DIVECENTREPROMOPIC"
-# echo "      FB ID: $DIVECENTREFBID"
+echo "Dive centre: $DIVECENTRE"
+echo "  Promo pic: $DIVECENTREPROMOPIC"
+echo "      FB ID: $DIVECENTREFBID"
+echo "BUILDZIP is $BUILDZIP"
 # echo "     extras: $@"
 
 echo "{" > "$outp"
@@ -100,6 +109,7 @@ then
     for picture in $PHOTOLIST
     do
         #add to zip file
+        echo $PICDIR/$picture
         zip -jqdc "$ZIPDIR"/"$1".zip "$PICDIR"/"$picture"
     done
 fi
