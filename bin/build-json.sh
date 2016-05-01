@@ -72,6 +72,12 @@ then
     DIVECENTREFBID="358956457475087"
 fi
 
+if [ "$DIVECENTRE" == "Alpha" ]
+then
+    echo "Alpha dive centre"
+    DIVECENTREPROMOPIC="images/alpha.png"
+    DIVECENTREURL="http://alphadive.center"
+fi
 
 # echo "  Photolist: $PHOTOLIST"
 echo "Dive centre: $DIVECENTRE"
