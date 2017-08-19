@@ -7,7 +7,7 @@ DIVECENTREURL="http://soulflyer.co.uk"
 BUILDZIP=false
 PHOTOLIST=$(/Users/iain/bin/selectedpics)
 JSONDIR="/Users/iain/Pictures/Published/json"
-ZIPDIR="/users/iain/Pictures/Published/zip"
+ZIPDIR="/Users/iain/Pictures/Published/zip"
 PICDIR="/Users/iain/Pictures/Published/large"
 
 outp=/dev/stdout
@@ -49,16 +49,30 @@ shift $((OPTIND-1))
 #Fuck knows why I'm checking for -- at this point...
 [ "$1" = "--" ] && shift
 
-echo $1
+#echo $1
 
 if [ $1 ]
 then
     outp="$JSONDIR"/"$1"
+    zipp="$ZIPDIR"/"$1".zip
+    echo "Zipfile $zipp"
+fi
+
+if [ $BUILDZIP = true ]
+then
+    echo "Building zip $zipp ***"
+    for picture in $PHOTOLIST
+    do
+        #add to zip file
+        #echo $PICDIR/$picture
+        #echo $ZIPDIR/$1.zip
+        zip -jqdc "$zipp  $PICDIR/$picture"
+    done
 fi
 
 if [ "$DIVECENTRE" = "Sailing Club" ]
 then
-    echo "sailing club divers"
+    #echo "sailing club divers"
     DIVECENTREPROMOPIC="images/sailingpromo.jpg"
     DIVECENTREURL="http://www.sailingclubdivers.com"
     DIVECENTREFBID="123788904350090"
@@ -66,7 +80,7 @@ fi
 
 if [ "$DIVECENTRE" == "Rainbow" ]
 then
-    echo "Rainbow divers"
+    #echo "Rainbow divers"
     DIVECENTREPROMOPIC="images/RainbowPromo.png"
     DIVECENTREURL="http://divevietnam.com"
     DIVECENTREFBID="358956457475087"
@@ -74,16 +88,16 @@ fi
 
 if [ "$DIVECENTRE" == "Alpha" ]
 then
-    echo "Alpha dive centre"
+    #echo "Alpha dive centre"
     DIVECENTREPROMOPIC="images/alpha.png"
     DIVECENTREURL="http://alphadive.center"
 fi
 
 # echo "  Photolist: $PHOTOLIST"
-echo "Dive centre: $DIVECENTRE"
-echo "  Promo pic: $DIVECENTREPROMOPIC"
-echo "      FB ID: $DIVECENTREFBID"
-echo "BUILDZIP is $BUILDZIP"
+#echo "Dive centre: $DIVECENTRE"
+#echo "  Promo pic: $DIVECENTREPROMOPIC"
+#echo "      FB ID: $DIVECENTREFBID"
+#echo "BUILDZIP is $BUILDZIP"
 # echo "     extras: $@"
 
 echo "{" > "$outp"
@@ -109,13 +123,3 @@ do
 done
 echo "  ]" >> "$outp"
 echo "}" >> "$outp"
-
-if [ $BUILDZIP = true ]
-then
-    for picture in $PHOTOLIST
-    do
-        #add to zip file
-        echo $PICDIR/$picture
-        zip -jqdc "$ZIPDIR"/"$1".zip "$PICDIR"/"$picture"
-    done
-fi
