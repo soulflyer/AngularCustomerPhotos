@@ -130,7 +130,9 @@ a:visited, a:link, a:active {
   height: 100%; }
 
 .pic-content img {
-  width: 100%; }
+  height: 95%;
+  display: block;
+  margin: auto; }
 
 aside {
   display: none; }
