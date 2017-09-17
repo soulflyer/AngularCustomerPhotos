@@ -1,6 +1,6 @@
 #!/bin/bash
 NODIVECENTRE=false
-DIVECENTRE="none"
+DIVECENTRE="Alpha"
 DIVECENTREFBID="320658371441269"
 DIVECENTREPROMOPIC="images/Divecentre.png"
 DIVECENTREURL="http://soulflyer.co.uk"
@@ -14,13 +14,16 @@ outp=/dev/stdout
 
 OPTIND=1
 
-while getopts "znu:f:i:p:d:l:?" opt; do
+while getopts "znau:f:i:p:d:l:?x:" opt; do
     case $opt in
         z)
             BUILDZIP=true
             ;;
         n)
             NODIVECENTRE=true
+            ;;
+        a)
+            PHOTOLIST=$(/Users/iain/bin/selectedpics)
             ;;
         u)
             DIVECENTREURL=$OPTARG
@@ -41,6 +44,8 @@ while getopts "znu:f:i:p:d:l:?" opt; do
         f)
             outp=$OPTARG
             ;;
+        x)
+            PHOTOLIST=`cat $OPTARG | xargs`
     esac
 done
 
@@ -66,7 +71,8 @@ then
         #add to zip file
         #echo $PICDIR/$picture
         #echo $ZIPDIR/$1.zip
-        zip -jqdc "$zipp  $PICDIR/$picture"
+        # echo "zip -jqdc $zipp $PICDIR/$picture"
+        zip -jq $zipp $PICDIR/$picture
     done
 fi
 
@@ -93,12 +99,12 @@ then
     DIVECENTREURL="http://alphadive.center"
 fi
 
-# echo "  Photolist: $PHOTOLIST"
-#echo "Dive centre: $DIVECENTRE"
-#echo "  Promo pic: $DIVECENTREPROMOPIC"
-#echo "      FB ID: $DIVECENTREFBID"
-#echo "BUILDZIP is $BUILDZIP"
-# echo "     extras: $@"
+echo "  Photolist: $PHOTOLIST"
+echo "Dive centre: $DIVECENTRE"
+echo "  Promo pic: $DIVECENTREPROMOPIC"
+echo "      FB ID: $DIVECENTREFBID"
+echo "BUILDZIP is $BUILDZIP"
+echo "     extras: $@"
 
 echo "{" > "$outp"
 echo "  \"nodivecentre\": ${NODIVECENTRE}," >> "$outp"
