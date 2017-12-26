@@ -96,15 +96,15 @@ if [ "$DIVECENTRE" == "Alpha" ]
 then
     #echo "Alpha dive centre"
     DIVECENTREPROMOPIC="images/alpha.png"
-    DIVECENTREURL="http://alphadive.center"
+    DIVECENTREURL="http://divealpha.com"
 fi
 
-echo "  Photolist: $PHOTOLIST"
-echo "Dive centre: $DIVECENTRE"
-echo "  Promo pic: $DIVECENTREPROMOPIC"
-echo "      FB ID: $DIVECENTREFBID"
-echo "BUILDZIP is $BUILDZIP"
-echo "     extras: $@"
+# echo "  Photolist: $PHOTOLIST"
+# echo "Dive centre: $DIVECENTRE"
+# echo "  Promo pic: $DIVECENTREPROMOPIC"
+# echo "      FB ID: $DIVECENTREFBID"
+# echo "BUILDZIP is $BUILDZIP"
+# echo "     extras: $@"
 
 echo "{" > "$outp"
 echo "  \"nodivecentre\": ${NODIVECENTRE}," >> "$outp"
